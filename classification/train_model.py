@@ -4,6 +4,9 @@ import numpy as np
 #import tensorflow as tf
 import os
 import sys
+import argparse
+import arguments
+
 
 os.environ["KERAS_BACKEND"] = "jax" 
 import keras
@@ -25,7 +28,7 @@ def change_paths(df, data_directory):
     df = df.copy()
 
 
-    df["ImagePath"] = df["ImagePath"].apply(lambda x: x.replace("/home/data_shares/purrlab_students/padchest-preprocessed/", data_directory))
+    df["ImagePath"] = df["ImagePath"].apply(lambda x: x.replace("/home/data_shares/purrlab_students/", data_directory))
 
     return df
 
@@ -34,11 +37,15 @@ def change_paths(df, data_directory):
 def PD_save_models(
         x_train, 
         y_train_pd, 
+        y_train_td, 
         x_val,
         y_val_pd,
+        y_val_td,
         epochs, 
+        gamma, 
         lr,name, 
-        out_dir
+        out_dir,
+        batch_size
     ):
 
     # Get the DenseNet ImageNet weights
@@ -59,34 +66,39 @@ def PD_save_models(
     # Pathology detection layer
     PD = Dense(5, activation='sigmoid', name="PD_output")(x)
     
-    model = Model(inputs=densenet_model.inputs, outputs=PD)
+    # Tube detection layer
+    TD = Dense(4, activation='sigmoid', name="TD_output")(x)
+    
+    model = Model(inputs=densenet_model.inputs, outputs=[PD, TD])
 
     adam = keras.optimizers.Adam(learning_rate = lr)
 
-    checkpoint_filepath = out_dir + f"checkpoint.{name}_epochs_{epochs}.keras"
+    checkpoint_filepath = out_dir + f"checkpoint.{name}_gamma_{gamma}_epochs_{epochs}.keras"
     model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
     filepath=checkpoint_filepath,
-    monitor='val_auc',
+    monitor='val_PD_output_auc',
     mode='max',
     save_best_only=True)
 
     model.compile(
-        loss={"PD_output": keras.losses.BinaryCrossentropy()}, 
+        loss={"PD_output": keras.losses.BinaryCrossentropy(), "TD_output": keras.losses.BinaryCrossentropy()}, 
+        loss_weights={"PD_output":gamma, "TD_output":1-gamma}, 
         optimizer=adam, 
-        metrics=['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")]
+        metrics=[['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")],['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")]]
     )
     model.summary()
     history = model.fit(
-        x_train,
-        y_train_pd,
-        batch_size=128,
+         x_train,
+        {"PD_output":y_train_pd, "TD_output":y_train_td},
+    #    generator_double_output(generator_train_padchest_pd, generator_train_padchest_td), 
+        batch_size=batch_size,
         epochs=epochs,  
         verbose=2,
-        validation_data=(x_val, y_val_pd),
+        validation_data=(x_val, {"PD_output":y_val_pd, "TD_output":y_val_td}),
         callbacks=[model_checkpoint_callback]
     )
 
-    model.save(out_dir + f"{name}_epochs_{epochs}.keras")
+    model.save(out_dir + f"{name}_gamma_{gamma}_epochs_{epochs}.keras")
     print(history.history)
     # Get performances: train=PD, Val=TD
 
@@ -96,34 +108,51 @@ def PD_save_models(
 
 def main():
     # Defining the model hyperparameters
-    name = sys.argv[1]
-    epochs = 50
-    learning_rate = 0.00001
-    data_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/Data/"
-    output_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/models/"
+
+    parser = argparse.ArgumentParser()
+    parser = arguments.add_model_args(parser)
+
+
+    known_args, _ = parser.parse_known_args()
+
+    gamma = known_args.gamma
+    name = known_args.model_name
+    epochs = known_args.epochs
+    learning_rate = known_args.learning_rate
+    data_dir = known_args.data_dir
+    output_dir = known_args.model_path
+
+
+    #data_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/Data/"
+    #output_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/models/"
 
 
     pathology_detection_train = pd.read_csv(data_dir + 'Data_splits/pathology_detection-train.csv', index_col=0)
+    tube_detection_train = pd.read_csv(data_dir + "Data_splits/tube_detection-finetuning.csv", index_col=0)
 
 
     pathology_detection_val = pd.read_csv(data_dir + 'Data_splits/pathology_detection-val.csv', index_col=0)
+    tube_detection_val = pd.read_csv(data_dir + "Data_splits/tube_detection-finetuning_val.csv", index_col=0)
 
     # Concatenating the datasets for fine-tuning and shuffling
-    train_df = pd.concat([pathology_detection_train])
+    train_df = pd.concat([pathology_detection_train, tube_detection_train])
     train_df = train_df.sample(frac=1, random_state=321).reset_index(drop=True)
 
-    val_df = pd.concat([pathology_detection_val])
+    val_df = pd.concat([pathology_detection_val, tube_detection_val])
     val_df = val_df.sample(frac=1, random_state=321).reset_index(drop=True)
 
     # Changing the image paths, so they fit to res24
-    train_df = change_paths(train_df, data_dir + "padchest-cropped/")
-    val_df = change_paths(val_df, data_dir + "padchest-cropped/")  
+    train_df = change_paths(train_df, data_dir)
+    val_df = change_paths(val_df, data_dir)  
 
     # N-hot encoding the labels
     labels_to_encode = ['Effusion', 'Pneumothorax', 'Atelectasis', 'Cardiomegaly', 'Pneumonia']
     y_train_pd = get_n_hot_encoding(train_df, labels_to_encode)
     y_val_pd = get_n_hot_encoding(val_df, labels_to_encode)
 
+    labels_to_encode = ['Chest_drain_tube', 'NSG_tube', 'Endotracheal_tube', 'Tracheostomy_tube']
+    y_train_td = get_n_hot_encoding(train_df, labels_to_encode)
+    y_val_td = get_n_hot_encoding(val_df, labels_to_encode)
 
     #rescaler = keras.layers.Rescaling(scale=1./255)
     # Load data into CPU memory
@@ -135,16 +164,20 @@ def main():
     model_history = PD_save_models(
         x_train, 
         y_train_pd, 
+        y_train_td,
         x_val,
         y_val_pd,
+        y_val_td,
         epochs=epochs,
+        gamma=gamma,
         lr=learning_rate, 
         name=name,
-        out_dir=output_dir
+        out_dir=output_dir,
+        batch_size= known_args.batch_size
     )
 
     # Save metrics
-    filename = f"{name}_history_epochs_{epochs}.json"
+    filename = f"{name}_history_gamma_{gamma}_epochs_{epochs}.json"
     df_history = pd.DataFrame(data=model_history.history)
     df_history.to_json(output_dir+filename)
 

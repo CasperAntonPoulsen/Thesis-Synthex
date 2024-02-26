@@ -1,0 +1,21 @@
+Fri Feb 23 18:20:22 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.154.05             Driver Version: 535.154.05   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA H100 PCIe               On  | 00000000:41:00.0 Off |                    0 |
+| N/A   36C    P0              47W / 350W |      0MiB / 81559MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Downloading https://livejohnshopkins-my.sharepoint.com/:u:/g/personal/bkillee1_jh_edu/EfynPcmVdVJHs_eoTTXPIFEB71mWSrZCERGxJKNQNovqwA?e=OPkyJc&download=1 to /zhome/4e/b/208805/datasets/DeepDRR_DATA/CTPelvic1K_dataset6_CLINIC_0001.zip

@@ -4,9 +4,9 @@
 ### –- specify queue --
 #BSUB -q p1
 ### -- set the job Name --
-#BSUB -J train_densenet_mt_gamma_04
+#BSUB -J train_mt_04
 ### -- ask for number of cores (default: 1) --
-#BSUB -n 64
+#BSUB -n 16
 ### -- Select the resources: 1 gpu in exclusive process mode --
 #BSUB -gpu "num=1:mode=exclusive_process"
 ### -- set walltime limit: hh:mm --  maximum 24 hours for GPU-queues right now
@@ -24,12 +24,18 @@
 #BSUB -N
 ### -- Specify the output and error file. %J is the job-id --
 ### -- -o and -e mean append, -oo and -eo mean overwrite --
-#BSUB -o /dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/Jobs/LSF10/logs/R-train_densenet_mt_gamma_04_%J.out
-#BSUB -e /dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/Jobs/LSF10/logs/R-train_densenet_mt_gamma_04_%J.err
+#BSUB -o /dtu/p1/johlau/Thesis-Synthex/jobs/lsf10/logs/R-train_mt_04_%J.out
+#BSUB -e /dtu/p1/johlau/Thesis-Synthex/jobs/lsf10/logs/logs/R-train_mt_04_%J.err
 # -- end of LSF options --
 
 nvidia-smi
 # Load the cuda module
 module load cuda/12.2
 
-python3 /dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/MT_save_models.py 0.4 mt
+
+bash /dtu/p1/johlau/Thesis-Synthex/scripts/classification/train_model.sh \
+    /dtu/p1/johlau/Thesis-Synthex \
+    mt \
+    30 \
+    0.00001 \
+    0.8
