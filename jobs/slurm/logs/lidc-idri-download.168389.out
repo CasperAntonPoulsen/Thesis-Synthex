@@ -1,0 +1,10 @@
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+spyder 5.4.1 requires pyqt5<5.16, which is not installed.
+spyder 5.4.1 requires pyqtwebengine<5.16, which is not installed.
+conda-repo-cli 1.0.41 requires requests_mock, which is not installed.
+apache-beam 2.52.0 requires jsonschema<5.0.0,>=4.0.0, but you have jsonschema 3.2.0 which is incompatible.
+jupyterlab-server 2.19.0 requires jsonschema>=4.17.3, but you have jsonschema 3.2.0 which is incompatible.
+conda-repo-cli 1.0.41 requires clyent==1.2.1, but you have clyent 1.2.2 which is incompatible.
+conda-repo-cli 1.0.41 requires nbformat==5.4.0, but you have nbformat 5.7.0 which is incompatible.
+python3 -m carbontracker.cli /home/caap/Thesis-Synthex/data/nbia_downloader.py --base-path /home/caap/Thesis-Synthex --output-dir --collection-name --log_dir /home/caap/Thesis-Synthex/carbon_logs/
+/opt/itu/easybuild/software/Anaconda3/2023.03-1/bin/python3: Error while finding module specification for 'carbontracker.cli' (ModuleNotFoundError: No module named 'carbontracker')

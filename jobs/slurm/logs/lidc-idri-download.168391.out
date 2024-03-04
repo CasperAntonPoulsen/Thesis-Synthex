@@ -1,0 +1,45 @@
+Defaulting to user installation because normal site-packages is not writeable
+Collecting carbontracker
+  Downloading carbontracker-1.2.5-py3-none-any.whl (34 kB)
+Requirement already satisfied: numpy in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from carbontracker) (1.23.5)
+Requirement already satisfied: psutil in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from carbontracker) (5.9.0)
+Collecting geocoder
+  Downloading geocoder-1.38.1-py2.py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.6/98.6 kB 400.4 kB/s eta 0:00:00
+Requirement already satisfied: requests in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from carbontracker) (2.28.1)
+Requirement already satisfied: pynvml in ./.local/lib/python3.10/site-packages (from carbontracker) (11.5.0)
+Requirement already satisfied: importlib-metadata in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from carbontracker) (4.11.3)
+Requirement already satisfied: pandas in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from carbontracker) (1.5.3)
+Collecting ratelim
+  Downloading ratelim-0.1.6-py2.py3-none-any.whl (4.0 kB)
+Requirement already satisfied: click in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from geocoder->carbontracker) (8.0.4)
+Requirement already satisfied: future in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from geocoder->carbontracker) (0.18.3)
+Requirement already satisfied: six in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from geocoder->carbontracker) (1.16.0)
+Requirement already satisfied: zipp>=0.5 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from importlib-metadata->carbontracker) (3.11.0)
+Requirement already satisfied: python-dateutil>=2.8.1 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from pandas->carbontracker) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from pandas->carbontracker) (2022.7)
+Requirement already satisfied: charset-normalizer<3,>=2 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from requests->carbontracker) (2.0.4)
+Requirement already satisfied: idna<4,>=2.5 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from requests->carbontracker) (3.4)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from requests->carbontracker) (1.26.14)
+Requirement already satisfied: certifi>=2017.4.17 in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from requests->carbontracker) (2022.12.7)
+Requirement already satisfied: decorator in /opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/site-packages (from ratelim->geocoder->carbontracker) (5.1.1)
+Installing collected packages: ratelim, geocoder, carbontracker
+Successfully installed carbontracker-1.2.5 geocoder-1.38.1 ratelim-0.1.6
+python3 -m carbontracker.cli /home/caap/Thesis-Synthex/data/nbia_downloader.py --base-path /home/caap/Thesis-Synthex --output-dir --collection-name --log_dir /home/caap/Thesis-Synthex/carbon_logs/
+Traceback (most recent call last):
+  File "/opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+CarbonTracker: The following components were found: CPU with device(s) cpu:0, cpu:1.
+    return _run_code(code, main_globals, None,
+  File "/opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/caap/.local/lib/python3.10/site-packages/carbontracker/cli.py", line 38, in <module>
+    main()
+  File "/home/caap/.local/lib/python3.10/site-packages/carbontracker/cli.py", line 28, in main
+    subprocess.run(remaining_args, check=True)
+  File "/opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/subprocess.py", line 503, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/subprocess.py", line 971, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/opt/itu/easybuild/software/Anaconda3/2023.03-1/lib/python3.10/subprocess.py", line 1847, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+PermissionError: [Errno 13] Permission denied: '/home/caap/Thesis-Synthex/data/nbia_downloader.py'
