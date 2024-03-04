@@ -27,12 +27,11 @@ After the radiologist have completed looking at all the images, a follow up inte
 
 Synthetic image:
 
-![1709537604085](image/README/1709537604085.png)
+![1709537604085](image/README/synthetic_example.png)
 
 Real image:
 
-![1709537643196](image/README/1709537643196.png)
-
+![1709537643196](image/README/real_example.png)
 
 ## Todo list
 
