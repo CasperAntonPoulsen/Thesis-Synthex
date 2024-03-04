@@ -2,6 +2,14 @@
 
 ## Usage
 
+### Carbontracker
+
+All scripts submitted to a cluster in this repository uses the carbontracker[ https://github.com/lfwa/carbontracker]()
+
+The logs are stored in /carbon_logs/ and to summarize the logs, simply run;
+
+`$ python3 carbon_summary.py`
+
 ## Weekly log
 
 ### Weeks 8-9
