@@ -2,16 +2,11 @@
 
 ## Usage
 
-
-
 ## Weekly log
 
 ### Weeks 8-9
 
-
 For these two weeks we have had focus on 3 things, finding related works for DRR and projecting CT scans to 2D for more data, Defining our experimental setup and implementing the creation of the synthetic data using DeepDRR.
-
-
 
 #### Experimental setup (Qualitative study)
 
@@ -30,14 +25,17 @@ Murad, and Shah (Spot the fake article). The radiologist were asked to state if 
 
 After the radiologist have completed looking at all the images, a follow up interview is conducted so they can explain their findings especially what made them rate an image fake.
 
+Synthetic image:
 
+![1709537604085](image/README/1709537604085.png)
+
+Real image:
+
+![1709537643196](image/README/1709537643196.png)
 
 
 ## Todo list
 
-
 ### Current
 
-
 ### Backlog
-
