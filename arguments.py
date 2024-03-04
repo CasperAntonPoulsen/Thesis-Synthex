@@ -34,3 +34,6 @@ def add_classifiers_data_prep_args(parser: argparse.ArgumentParser):
 def add_deepdrr_args(parser: argparse.ArgumentParser):
     """DeepDRR arguments"""
     return parser
+
+def add_carbontracker_summary_args(parser: argparse.ArgumentParser):
+    """Carbontracker summary_args"""
