@@ -92,6 +92,8 @@ python3 data_prep/resize_padchest.py
 python3 data_prep/sample_padchest_synthex.py
 ```
 
+Then run the data splits code within the synthex/cyclegan.ipynb notebook
+
 ### Usage
 
 The requirements for Synthex are;
