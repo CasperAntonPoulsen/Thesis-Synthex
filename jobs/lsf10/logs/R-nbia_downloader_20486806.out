@@ -1,0 +1,45 @@
+Mon Mar  4 15:53:49 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.14              Driver Version: 550.54.14      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               On  |   00000000:41:00.0 Off |                    0 |
+| N/A   27C    P0             46W /  350W |       0MiB /  81559MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: carbontracker in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (1.2.5)
+Requirement already satisfied: pynvml in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (11.5.0)
+Requirement already satisfied: psutil in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (5.9.6)
+Requirement already satisfied: pandas in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (2.1.4)
+Requirement already satisfied: requests in /usr/lib/python3.9/site-packages (from carbontracker) (2.25.1)
+Requirement already satisfied: numpy in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (1.26.4)
+Requirement already satisfied: geocoder in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (1.38.1)
+Requirement already satisfied: importlib-metadata in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from carbontracker) (7.0.0)
+Requirement already satisfied: future in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from geocoder->carbontracker) (1.0.0)
+Requirement already satisfied: six in /usr/lib/python3.9/site-packages (from geocoder->carbontracker) (1.15.0)
+Requirement already satisfied: ratelim in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from geocoder->carbontracker) (0.1.6)
+Requirement already satisfied: click in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from geocoder->carbontracker) (8.1.7)
+Requirement already satisfied: zipp>=0.5 in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from importlib-metadata->carbontracker) (3.17.0)
+Requirement already satisfied: pytz>=2020.1 in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from pandas->carbontracker) (2023.3.post1)
+Requirement already satisfied: python-dateutil>=2.8.2 in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from pandas->carbontracker) (2.8.2)
+Requirement already satisfied: tzdata>=2022.1 in /zhome/4e/b/208805/.local/lib/python3.9/site-packages (from pandas->carbontracker) (2023.3)
+Requirement already satisfied: decorator in /usr/lib/python3.9/site-packages (from ratelim->geocoder->carbontracker) (4.4.2)
+Requirement already satisfied: idna<3,>=2.5 in /usr/lib/python3.9/site-packages (from requests->carbontracker) (2.10)
+Requirement already satisfied: chardet<5,>=3.0.2 in /usr/lib/python3.9/site-packages (from requests->carbontracker) (4.0.0)
+Requirement already satisfied: urllib3<1.27,>=1.21.1 in /usr/lib/python3.9/site-packages (from requests->carbontracker) (1.26.5)
+python3 -m carbontracker.cli python3 /dtu/p1/johlau/Thesis-Synthex/nbia_downloader.py --base-path /dtu/p1/johlau/Thesis-Synthex --output-dir /dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI --collection-name LIDC-IDRI --log_dir /dtu/p1/johlau/Thesis-Synthex/carbon_logs/ /dtu/p1/johlau/Thesis-Synthex /dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI
+CarbonTracker: The following components were found: GPU with device(s) NVIDIA H100 PCIe. CPU with device(s) cpu:1, cpu:0.
+No sudo access to read Intel's RAPL measurements from the energy_uj file.
+See issue: https://github.com/lfwa/carbontracker/issues/40

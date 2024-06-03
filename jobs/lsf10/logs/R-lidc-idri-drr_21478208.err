@@ -1,0 +1,25 @@
+Loaded module: cuda/11.8
+ERROR: Unable to locate a modulefile for 'python3/3.9.18'
+WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /zhome/4e/b/208805/.local/lib/python3.9/site-packages
+sysconfig: /zhome/4e/b/208805/.local/lib64/python3.9/site-packages
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+Traceback (most recent call last):
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nibabel/loadsave.py", line 42, in load
+    stat_result = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI-NIFTI/LIDC-IDRI-0648.nii.gz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/lidc-idri-drr.py", line 33, in <module>
+    patient = deepdrr.Volume.from_nifti(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/deepdrr/vol/volume.py", line 486, in from_nifti
+    img = nib.load(path)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nibabel/loadsave.py", line 44, in load
+    raise FileNotFoundError(f"No such file or no access: '{filename}'")
+FileNotFoundError: No such file or no access: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI-NIFTI/LIDC-IDRI-0648.nii.gz'

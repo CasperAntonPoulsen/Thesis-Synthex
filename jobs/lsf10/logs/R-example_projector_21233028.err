@@ -1,0 +1,18 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nibabel/loadsave.py", line 42, in load
+    stat_result = os.stat(filename)
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI-NIFTI/LIDC-IDRI-001.nii.gz'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 41, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 15, in main
+    patient = deepdrr.Volume.from_nifti(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 486, in from_nifti
+    img = nib.load(path)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nibabel/loadsave.py", line 44, in load
+    raise FileNotFoundError(f"No such file or no access: '{filename}'")
+FileNotFoundError: No such file or no access: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI-NIFTI/LIDC-IDRI-001.nii.gz'

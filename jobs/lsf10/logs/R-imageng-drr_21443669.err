@@ -1,0 +1,5 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/imageng-drr.py", line 6, in <module>
+    from deepdrr import geo
+ImportError: cannot import name 'geo' from 'deepdrr' (unknown location)

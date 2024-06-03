@@ -1,0 +1,11 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 32, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 13, in main
+    patient = deepdrr.Volume.from_nrrd(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 702, in from_nrrd
+    hu_values, header = nrrd.read(path)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nrrd/reader.py", line 515, in read
+    with open(filename, 'rb') as fh:
+NotADirectoryError: [Errno 20] Not a directory: '/zhome/4e/b/208805/datasets/DeepDRR_DATA/CT-chest.nrrd/CT-chest.nrrd'

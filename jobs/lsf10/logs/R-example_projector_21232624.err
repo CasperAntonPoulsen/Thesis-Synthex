@@ -1,0 +1,7 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 41, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 32, in main
+    carm.move_to(isocenter_in_world=volume.center_in_world + geo.v(0, 0, 500))
+NameError: name 'volume' is not defined

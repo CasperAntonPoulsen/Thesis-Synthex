@@ -1,0 +1,5 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/lidc-idri-drr.py", line 20, in <module>
+    for idx, volume in enumarate(volumes):
+NameError: name 'enumarate' is not defined

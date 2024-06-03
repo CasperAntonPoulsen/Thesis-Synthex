@@ -1,0 +1,7 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_converter.py", line 1, in <module>
+    from dicom2nifti.dicom2nifti import convert_directory
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/__init__.py", line 7, in <module>
+    from dicom2nifti.settings import disable_validate_slice_increment, \
+ModuleNotFoundError: No module named 'dicom2nifti.settings'

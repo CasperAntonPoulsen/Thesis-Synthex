@@ -1,0 +1,36 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/__init__.py", line 719, in wrapper
+    return func._memoize_dic[args]  # noqa: E501 # pylint: disable=protected-access
+AttributeError: 'function' object has no attribute '_memoize_dic'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 23, in main
+    with Projector(patient, carm=carm, photon_count=100000, step=0.001) as projector:
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 306, in __init__
+    self.mod = _get_kernel_projector_module(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 138, in _get_kernel_projector_module
+    return SourceModule(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 355, in __init__
+    cubin = compile(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 304, in compile
+    return compile_plain(source, options, keep, nvcc, cache_dir, target)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 96, in compile_plain
+    checksum.update(get_nvcc_version(nvcc).encode("utf-8"))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/__init__.py", line 722, in wrapper
+    result = func(*args)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 16, in get_nvcc_version
+    result, stdout, stderr = call_capture_output(cmdline)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/prefork.py", line 221, in call_capture_output
+    return forker.call_capture_output(cmdline, cwd, error_on_nonzero)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/prefork.py", line 46, in call_capture_output
+    popen = Popen(cmdline, cwd=cwd, stdin=PIPE, stdout=PIPE,
+  File "/usr/lib64/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib64/python3.9/subprocess.py", line 1770, in _execute_child
+    self.pid = _posixsubprocess.fork_exec(
+KeyboardInterrupt

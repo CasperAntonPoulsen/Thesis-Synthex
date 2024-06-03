@@ -1,0 +1,20 @@
+Loaded module: cuda/12.2
+WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /zhome/4e/b/208805/.local/lib/python3.9/site-packages
+sysconfig: /zhome/4e/b/208805/.local/lib64/python3.9/site-packages
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+  WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+  distutils: /zhome/4e/b/208805/.local/lib/python3.9/site-packages
+  sysconfig: /zhome/4e/b/208805/.local/lib64/python3.9/site-packages
+  WARNING: Additional context:
+  user = True
+  home = None
+  root = None
+  prefix = None
+  WARNING: The script jsonschema is installed in '/zhome/4e/b/208805/.local/bin' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+/zhome/4e/b/208805/.lsbatch/1709558382.20486431.shell: line 39: /home/caap/Thesis-Synthex/scripts/data/nbia_downloader.sh: No such file or directory

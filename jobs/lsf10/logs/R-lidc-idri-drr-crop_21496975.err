@@ -1,0 +1,4 @@
+Loaded module: cuda/12.2
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/layers/layer.py:360: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+0it [00:00, ?it/s]1it [00:03,  3.05s/it]2it [00:04,  1.93s/it]3it [00:04,  1.22s/it]4it [00:05,  1.08it/s]5it [00:05,  1.28it/s]6it [00:06,  1.46it/s]7it [00:06,  1.70it/s]8it [00:06,  1.93it/s]9it [00:07,  2.01it/s]10it [00:07,  2.07it/s]10it [00:07,  1.29it/s]

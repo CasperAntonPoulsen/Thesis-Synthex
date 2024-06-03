@@ -1,0 +1,14 @@
+Loaded module: cuda/11.8
+ERROR: Unable to locate a modulefile for 'python3/3.9.18'
+WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /zhome/4e/b/208805/.local/lib/python3.9/site-packages
+sysconfig: /zhome/4e/b/208805/.local/lib64/python3.9/site-packages
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+  File "/dtu/p1/johlau/Thesis-Synthex/rad-chestct-drr.py", line 35
+    path = Path(base_path + output_path + f"{volume.split(".")[0]}.png")
+                                                           ^
+SyntaxError: f-string: unmatched '('

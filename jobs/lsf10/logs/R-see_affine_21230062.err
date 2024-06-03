@@ -1,0 +1,5 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_see_affine.py", line 20, in <module>
+    test  = reorient_nii.reorient(test_file, 'LPI')
+NameError: name 'test_file' is not defined

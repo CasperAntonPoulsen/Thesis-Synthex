@@ -1,0 +1,9 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/imageng-drr.py", line 20, in <module>
+    patient = deepdrr.Volume.from_nrrd(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/deepdrr/vol/volume.py", line 702, in from_nrrd
+    hu_values, header = nrrd.read(path)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/nrrd/reader.py", line 515, in read
+    with open(filename, 'rb') as fh:
+NotADirectoryError: [Errno 20] Not a directory: '/dtu/p1/johlau/Thesis-Synthex/data/ImagEng/patients_1-10.zip/CT.nrrd'

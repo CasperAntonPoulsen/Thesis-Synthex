@@ -1,0 +1,11 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 13, in main
+    patient = deepdrr.Volume.from_dicom(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 577, in from_dicom
+    ds = dcmread(path)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pydicom/filereader.py", line 1002, in dcmread
+    fp = open(fp, 'rb')
+IsADirectoryError: [Errno 21] Is a directory: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI/LIDC-IDRI-0001/1.3.6.1.4.1.14519.5.2.1.6279.6001.179049373636438705059720603192'

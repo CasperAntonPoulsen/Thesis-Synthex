@@ -1,0 +1,80 @@
+Loaded module: cuda/11.8
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py:138: UserWarning: The CUDA compiler succeeded, but said the following:
+kernel.cu(2409): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+
+kernel.cu(2409): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+
+kernel.cu(2409): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+
+kernel.cu(2786): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(65): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(66): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(68): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(69): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(72): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(73): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(75): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/internal/cubicTex3D_kernel.cu(76): warning #1215-D: function "tex3D(texture<T, 3, cudaReadModeElementType>, float, float, float) [with T=float]"
+/appl/cuda/11.8.0/bin/../targets/x86_64-linux/include/texture_fetch_functions.h(267): here was declared deprecated
+          detected during:
+            instantiation of "floatN cubicTex3D<floatN,T,mode>(texture<T, 3, mode>, float3) [with floatN=float, T=float, mode=cudaReadModeElementType]" 
+(125): here
+            instantiation of "float cubicTex3D(texture<float, 3, mode>, float, float, float) [with mode=cudaReadModeElementType]" 
+kernel.cu(2358): here
+
+
+  return SourceModule(

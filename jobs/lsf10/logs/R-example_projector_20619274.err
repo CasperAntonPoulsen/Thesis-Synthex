@@ -1,0 +1,13 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 32, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 12, in main
+    data_dir = test_utils.download_sampledata("CTPelvic1K_sample")
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/utils/test_utils.py", line 49, in download_sampledata
+    with zipfile.ZipFile(path, 'r') as zip_ref:
+  File "/usr/lib64/python3.9/zipfile.py", line 1266, in __init__
+    self._RealGetContents()
+  File "/usr/lib64/python3.9/zipfile.py", line 1333, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file

@@ -1,0 +1,12 @@
+Loaded module: cuda/11.8
+WARNING:root:pycuda unavailable
+CRITICAL:deepdrr.projector.cuda_scatter_structs:pycuda unavailable
+WARNING:deepdrr.projector.projector:Running without pycuda: projector operations will fail.
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/imageng-drr.py", line 25, in <module>
+    with Projector(patient, carm=carm) as projector:
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/deepdrr/projector/projector.py", line 306, in __init__
+    self.mod = _get_kernel_projector_module(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/deepdrr/projector/projector.py", line 138, in _get_kernel_projector_module
+    return SourceModule(
+NameError: name 'SourceModule' is not defined

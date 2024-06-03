@@ -1,0 +1,9 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 13, in main
+    patient = deepdrr.Volume.from_dicom(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 571, in from_dicom
+    assert (
+AssertionError: Currently only multi-frame dicoms are supported. Path must refer to a file.

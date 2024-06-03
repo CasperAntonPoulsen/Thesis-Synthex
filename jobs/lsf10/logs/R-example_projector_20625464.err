@@ -1,0 +1,101 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 23, in main
+    with Projector(patient, carm=carm) as projector:
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 306, in __init__
+    self.mod = _get_kernel_projector_module(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 138, in _get_kernel_projector_module
+    return SourceModule(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 355, in __init__
+    cubin = compile(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 304, in compile
+    return compile_plain(source, options, keep, nvcc, cache_dir, target)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 154, in compile_plain
+    raise CompileError(
+pycuda.driver.CompileError: nvcc compilation of /tmp/tmp4sqdvaoa/kernel.cu failed
+[command: nvcc --cubin -D NUM_VOLUMES=1 -D NUM_MATERIALS=3 -D ATTENUATE_OUTSIDE_VOLUME=0 -D AIR_INDEX=0 -arch sm_90 -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector -I/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/cuda kernel.cu]
+[stderr:
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: identifier "texture" is undefined
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                            ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: type name is not allowed
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                                    ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: identifier "tex" is undefined
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                                                ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: type name is not allowed
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                                                     ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: too many initializer values
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                                       ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(54): error: expected a ")"
+  __attribute__((device)) float linearTex3D(texture<T, 3, mode> tex, float3 coord)
+                                                                            ^
+
+/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic/cubicTex3D.cu(55): error: expected a ";"
+  {
+  ^
+
+kernel.cu(2358): error: identifier "cubicTex3D" is undefined
+      do { if (do_trace[0]) { do { px[0] = sx_ijk[0] + alpha * rx_ijk[0] - 0.5; py[0] = sy_ijk[0] + alpha * ry_ijk[0] - 0.5; pz[0] = sz_ijk[0] + alpha * rz_ijk[0] - 0.5; } while (0); do { do { seg_at_alpha[0][0] = round( cubicTex3D(seg_0_0, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][1] = round( cubicTex3D(seg_0_1, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][2] = round( cubicTex3D(seg_0_2, px[0], py[0], pz[0])); } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                             ^
+
+kernel.cu(2358): error: identifier "cubicTex3D" is undefined
+      do { if (do_trace[0]) { do { px[0] = sx_ijk[0] + alpha * rx_ijk[0] - 0.5; py[0] = sy_ijk[0] + alpha * ry_ijk[0] - 0.5; pz[0] = sz_ijk[0] + alpha * rz_ijk[0] - 0.5; } while (0); do { do { seg_at_alpha[0][0] = round( cubicTex3D(seg_0_0, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][1] = round( cubicTex3D(seg_0_1, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][2] = round( cubicTex3D(seg_0_2, px[0], py[0], pz[0])); } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                                                                                                                      ^
+
+kernel.cu(2358): error: identifier "cubicTex3D" is undefined
+      do { if (do_trace[0]) { do { px[0] = sx_ijk[0] + alpha * rx_ijk[0] - 0.5; py[0] = sy_ijk[0] + alpha * ry_ijk[0] - 0.5; pz[0] = sz_ijk[0] + alpha * rz_ijk[0] - 0.5; } while (0); do { do { seg_at_alpha[0][0] = round( cubicTex3D(seg_0_0, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][1] = round( cubicTex3D(seg_0_1, px[0], py[0], pz[0])); } while (0); do { seg_at_alpha[0][2] = round( cubicTex3D(seg_0_2, px[0], py[0], pz[0])); } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                                                                                                                                                                                                               ^
+
+kernel.cu(2409): error: identifier "volume_0" is undefined
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                                ^
+
+kernel.cu(2409): error: no instance of overloaded function "tex3D" matches the argument list
+            argument types are: (<error-type>, float, float, float)
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                          ^
+
+kernel.cu(2409): error: identifier "volume_0" is undefined
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                           ^
+
+kernel.cu(2409): error: no instance of overloaded function "tex3D" matches the argument list
+            argument types are: (<error-type>, float, float, float)
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                     ^
+
+kernel.cu(2409): error: identifier "volume_0" is undefined
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                                                                                                                                      ^
+
+kernel.cu(2409): error: no instance of overloaded function "tex3D" matches the argument list
+            argument types are: (<error-type>, float, float, float)
+        do { if (do_trace[0] && (priority[0] == curr_priority)) { do { do { area_density[(0)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][0]; } while (0); do { area_density[(1)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][1]; } while (0); do { area_density[(2)] += (weight)*tex3D(volume_0, px[0], py[0], pz[0]) * seg_at_alpha[0][2]; } while (0); } while (0); } } while (0);
+                                                                                                                                                                                                                                                                                                                                ^
+
+kernel.cu(2786): error: identifier "volume_0" is undefined
+              do { density_sample[0] = tex3D(volume_0, inp_x, inp_y, inp_z); mat_sample[0][0] = cubicTex3D(seg_0_0, inp_x, inp_y, inp_z); mat_sample[0][1] = cubicTex3D(seg_0_1, inp_x, inp_y, inp_z); mat_sample[0][2] = cubicTex3D(seg_0_2, inp_x, inp_y, inp_z); } while (0);
+                                             ^
+
+kernel.cu(2786): error: no instance of overloaded function "tex3D" matches the argument list
+            argument types are: (<error-type>, float, float, float)
+              do { density_sample[0] = tex3D(volume_0, inp_x, inp_y, inp_z); mat_sample[0][0] = cubicTex3D(seg_0_0, inp_x, inp_y, inp_z); mat_sample[0][1] = cubicTex3D(seg_0_1, inp_x, inp_y, inp_z); mat_sample[0][2] = cubicTex3D(seg_0_2, inp_x, inp_y, inp_z); } while (0);
+                                       ^
+
+kernel.cu(2786): error: identifier "cubicTex3D" is undefined
+              do { density_sample[0] = tex3D(volume_0, inp_x, inp_y, inp_z); mat_sample[0][0] = cubicTex3D(seg_0_0, inp_x, inp_y, inp_z); mat_sample[0][1] = cubicTex3D(seg_0_1, inp_x, inp_y, inp_z); mat_sample[0][2] = cubicTex3D(seg_0_2, inp_x, inp_y, inp_z); } while (0);
+                                                                                                ^
+
+19 errors detected in the compilation of "kernel.cu".
+]

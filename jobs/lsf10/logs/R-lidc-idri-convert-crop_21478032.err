@@ -1,0 +1,13 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_converter.py", line 1, in <module>
+    from dicom2nifti.dicom2nifti import convert_directory
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/__init__.py", line 19, in <module>
+    from dicom2nifti.dicom2nifti.convert_dicom import dicom_series_to_nifti
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 17, in <module>
+    import dicom2nifti.dicom2nifti.convert_ge as convert_ge
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_ge.py", line 20, in <module>
+    import dicom2nifti.dicom2nifti.convert_generic as convert_generic
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 13, in <module>
+    import dicom2nifti.dicom2nifti.common as common
+ModuleNotFoundError: No module named 'dicom2nifti.common'

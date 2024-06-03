@@ -1,0 +1,8 @@
+Loaded module: cuda/12.2
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/layers/layer.py:360: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+0it [00:00, ?it/s]0it [00:02, ?it/s]
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_radchest.py", line 49, in <module>
+    with open(output_dir + path, "+wb") as file:
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn06611.nii.gz.png'

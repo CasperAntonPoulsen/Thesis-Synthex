@@ -1,14 +1,22 @@
-# Thesis Synthex
+# (GENSYN) Generating Synthetic x-ray Images using SyntheX
 
-## Usage
+This is the repository for Casper Anton Poulsen and Michelle Hestbek-Møller Masters Thesis done at The IT University of Copenhagen in Spring of 2024. This repo is split into 5 different sections
 
-### Carbontracker
+* Data - Here is all the information on how to use custom download scripts
+* DeepDRR - This section explains how to use the DeepDRR scripts we have created and how to use the digital C-arm
+* SyntheX - This section explains how to train the CycleGAN using our setup
+* Model training - This section will show you how to recreate our model training setup
+* Radiologist Experiment - This setion goes through how to recreate our experimental setup for a qualitative analysis of synthetic images
 
-All scripts submitted to a cluster in this repository uses the carbontracker[ https://github.com/lfwa/carbontracker]()
+All of these sections have different requirements, outside of just python packages. Different cuda versions are required for each step, because of compatibility issues with the tools used in this project. It is therefor recommended if you wish to run this locally to use something like Nvidias cuda docker container tool [https://hub.docker.com/r/nvidia/cuda]() to change your cuda version on the fly. In our case we had access to a cluster through the Pioneer Center for AI in Copenhagen [https://www.aicentre.dk/]() which allowed for easy switching between versions.
 
-The logs are stored in /carbon_logs/ and to summarize the logs, simply run;
+## Data
 
-`$ python3 carbon_summary.py`
+This project used a lot of different data sets, most of which are publically available but has not direct download method. For this purpose we have created scripts to more easily download them. This is for the Radchest data set and LIDC-IDRI lung nodule data set.
+
+### Radchest downloader
+
+To use this data set you should apply for permission to get a token at [https://zenodo.org/records/6406114]() . Once you have this token, simply replace it either in the dedicated notebook data_prep/radchest-download.ipynb or the download script data_prep/radchest-download.py. Both scripts will download the data into the 
 
 ### NBIA downloader
 
@@ -19,6 +27,25 @@ The nbia_downloader.py takes two command line arguments --output-dir and --colle
 Example run:
 
 `$ python3 /home/caap/Thesis-Synthex/nbia_downloader.py --output-dir /home/data_shares/purrlab_students/LIDC-IDRI --collection-name LIDC-IDRA`
+
+### Carbontracker
+
+All scripts submitted to a cluster in this repository uses the carbontracker[ https://github.com/lfwa/carbontracker]()
+
+The logs are stored in /carbon_logs/ and to summarize the logs, simply run;
+
+`$ python3 carbon_summary.py`
+
+
+## DeepDRR
+
+The data sets required for this sections are ImagEng, LIDC-IDRI and RadChest.
+
+All of these CT data sets are in different formats:
+
+* ImagEng is in the NRRD format
+* LIDC-IDRI contains DICOM volumes
+* RadChest is in Numpy arrays
 
 ## Weekly log
 

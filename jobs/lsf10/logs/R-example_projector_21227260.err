@@ -1,0 +1,7 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 36, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 18, in main
+    patient = deepdrr.Volume.fron_nrrd("/dtu/p1/johlau/Thesis-Synthex/data/ImagEng/1/CT.nrrd", use_thresholding=False)
+AttributeError: type object 'Volume' has no attribute 'fron_nrrd'

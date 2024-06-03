@@ -1,0 +1,5 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_converter.py", line 17, in <module>
+    dicom2nifti.convert_directory(base_path+data_path+df_ct.iloc[i]["SeriesInstanceUID"], base_path+output_path, reorient=False)
+NameError: name 'dicom2nifti' is not defined

@@ -1,0 +1,34 @@
+ERROR: Unable to locate a modulefile for 'cuda/11.2'
+Traceback (most recent call last):
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/prefork.py", line 46, in call_capture_output
+    popen = Popen(cmdline, cwd=cwd, stdin=PIPE, stdout=PIPE,
+  File "/usr/lib64/python3.9/subprocess.py", line 951, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib64/python3.9/subprocess.py", line 1837, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'nvcc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 23, in main
+    with Projector(patient, carm=carm) as projector:
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 306, in __init__
+    self.mod = _get_kernel_projector_module(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 138, in _get_kernel_projector_module
+    return SourceModule(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 355, in __init__
+    cubin = compile(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 304, in compile
+    return compile_plain(source, options, keep, nvcc, cache_dir, target)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 90, in compile_plain
+    checksum.update(preprocess_source(source, options, nvcc).encode("utf-8"))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 53, in preprocess_source
+    result, stdout, stderr = call_capture_output(cmdline, error_on_nonzero=False)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/prefork.py", line 221, in call_capture_output
+    return forker.call_capture_output(cmdline, cwd, error_on_nonzero)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pytools/prefork.py", line 58, in call_capture_output
+    raise ExecError("error invoking '{}': {}".format(" ".join(cmdline), e))
+pytools.prefork.ExecError: error invoking 'nvcc --preprocess -D NUM_VOLUMES=1 -D NUM_MATERIALS=3 -D ATTENUATE_OUTSIDE_VOLUME=0 -D AIR_INDEX=0 -arch sm_90 -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector -I/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/cuda /tmp/tmpy0pqo1_7.cu --compiler-options -P': [Errno 2] No such file or directory: 'nvcc'

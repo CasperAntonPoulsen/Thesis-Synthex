@@ -1,0 +1,7 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_converter.py", line 1, in <module>
+    from dicom2nifti import convert_directory
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/__init__.py", line 1, in <module>
+    from dicom2nifti.convert_dir import convert_directory
+ModuleNotFoundError: No module named 'dicom2nifti.convert_dir'

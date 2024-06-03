@@ -1,0 +1,10 @@
+Loaded module: cuda/12.2
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/layers/layer.py:360: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+0it [00:00, ?it/s]0it [00:02, ?it/s]
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_regular_image.py", line 47, in <module>
+    cropped_image = crop_augment(image,model, original_image_size=image.size )
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_regular_image.py", line 29, in crop_augment
+    bottom_right_x, bottom_right_y = min(int(preds[2] * original_image_size), original_image_size[0]) + padding , min(int(preds[3] * original_image_size[0]) + padding ,original_image_size) 
+TypeError: can't multiply sequence by non-int of type 'numpy.float32'

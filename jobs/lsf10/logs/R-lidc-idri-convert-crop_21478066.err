@@ -1,0 +1,122 @@
+Loaded module: cuda/12.2
+Missing slices (slice count mismatch between timepoint 0 and 1)
+---------------------------------------------------------
+(512, 512, 219)
+(512, 512, 17)
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 249, in dicom_to_nifti
+    return four_d_to_nifti(grouped_dicoms, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 82, in four_d_to_nifti
+    full_block = _get_full_block(grouped_dicoms)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 127, in _get_full_block
+    raise ConversionError("MISSING_DICOM_FILES")
+dicom2nifti.exceptions.ConversionError: MISSING_DICOM_FILES
+/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py:43: RuntimeWarning: invalid value encountered in divide
+  current_direction = current_direction / numpy.linalg.norm(current_direction)
+Missing slices (slice count mismatch between timepoint 0 and 1)
+---------------------------------------------------------
+(512, 512, 189)
+(512, 512, 121)
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 249, in dicom_to_nifti
+    return four_d_to_nifti(grouped_dicoms, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 82, in four_d_to_nifti
+    full_block = _get_full_block(grouped_dicoms)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 127, in _get_full_block
+    raise ConversionError("MISSING_DICOM_FILES")
+dicom2nifti.exceptions.ConversionError: MISSING_DICOM_FILES
+Slice increment not consistent through all slices
+---------------------------------------------------------
+[-217.8 -210.  -379. ] [ 0.   0.  -2.5]
+[-217.8 -210.  -378.5] [ 0.   0.  -0.5]
+Instance Number: 145
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 260, in dicom_to_nifti
+    common.validate_slice_increment(dicom_input)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/common.py", line 895, in validate_slice_increment
+    raise ConversionValidationError('SLICE_INCREMENT_INCONSISTENT')
+dicom2nifti.exceptions.ConversionValidationError: SLICE_INCREMENT_INCONSISTENT
+Missing slices (slice count mismatch between timepoint 0 and 1)
+---------------------------------------------------------
+(512, 512, 153)
+(512, 512, 78)
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 249, in dicom_to_nifti
+    return four_d_to_nifti(grouped_dicoms, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 82, in four_d_to_nifti
+    full_block = _get_full_block(grouped_dicoms)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 127, in _get_full_block
+    raise ConversionError("MISSING_DICOM_FILES")
+dicom2nifti.exceptions.ConversionError: MISSING_DICOM_FILES
+Slice increment not consistent through all slices
+---------------------------------------------------------
+[-174. -160. -248.] [  0.   0. -38.]
+[-174. -160. -246.] [ 0.  0. -2.]
+Instance Number: 140
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 260, in dicom_to_nifti
+    common.validate_slice_increment(dicom_input)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/common.py", line 895, in validate_slice_increment
+    raise ConversionValidationError('SLICE_INCREMENT_INCONSISTENT')
+dicom2nifti.exceptions.ConversionValidationError: SLICE_INCREMENT_INCONSISTENT
+Removing duplicate slice from series
+Missing slices (slice count mismatch between timepoint 0 and 1)
+---------------------------------------------------------
+(512, 512, 129)
+(512, 512, 125)
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 249, in dicom_to_nifti
+    return four_d_to_nifti(grouped_dicoms, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 82, in four_d_to_nifti
+    full_block = _get_full_block(grouped_dicoms)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 127, in _get_full_block
+    raise ConversionError("MISSING_DICOM_FILES")
+dicom2nifti.exceptions.ConversionError: MISSING_DICOM_FILES
+Slice increment not consistent through all slices
+---------------------------------------------------------
+[-187.899994 -190.       -272.399994] [ 0.     0.    -0.625]
+[-187.899994 -190.       -271.149994] [ 0.    0.   -1.25]
+Instance Number: 444
+---------------------------------------------------------
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dir.py", line 89, in convert_directory
+    convert_dicom.dicom_array_to_nifti(dicom_input, nifti_file, reorient)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_dicom.py", line 118, in dicom_array_to_nifti
+    results = convert_generic.dicom_to_nifti(dicom_list, output_file)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/convert_generic.py", line 260, in dicom_to_nifti
+    common.validate_slice_increment(dicom_input)
+  File "/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/common.py", line 895, in validate_slice_increment
+    raise ConversionValidationError('SLICE_INCREMENT_INCONSISTENT')
+dicom2nifti.exceptions.ConversionValidationError: SLICE_INCREMENT_INCONSISTENT
+/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/dicom2nifti/common.py:547: RuntimeWarning: overflow encountered in scalar negative
+  maximum_required = max([-minimum_required, maximum_required])

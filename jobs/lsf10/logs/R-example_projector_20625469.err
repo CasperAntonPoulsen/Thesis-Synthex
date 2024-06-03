@@ -1,0 +1,22 @@
+Loaded module: cuda/11.1
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 33, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 23, in main
+    with Projector(patient, carm=carm) as projector:
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 306, in __init__
+    self.mod = _get_kernel_projector_module(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/projector.py", line 138, in _get_kernel_projector_module
+    return SourceModule(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 355, in __init__
+    cubin = compile(
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 304, in compile
+    return compile_plain(source, options, keep, nvcc, cache_dir, target)
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 90, in compile_plain
+    checksum.update(preprocess_source(source, options, nvcc).encode("utf-8"))
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/compiler.py", line 58, in preprocess_source
+    raise CompileError(
+pycuda.driver.CompileError: nvcc preprocessing of /tmp/tmpf06_06so.cu failed
+[command: nvcc --preprocess -D NUM_VOLUMES=1 -D NUM_MATERIALS=3 -D ATTENUATE_OUTSIDE_VOLUME=0 -D AIR_INDEX=0 -arch sm_90 -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector/cubic -I/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/projector -I/zhome/4e/b/208805/.local/lib/python3.9/site-packages/pycuda/cuda /tmp/tmpf06_06so.cu --compiler-options -P]
+[stderr:
+b"nvcc fatal   : Value 'sm_90' is not defined for option 'gpu-architecture'\n"]

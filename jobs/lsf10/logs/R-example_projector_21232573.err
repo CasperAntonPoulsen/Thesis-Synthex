@@ -1,0 +1,17 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 39, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 15, in main
+    patient = deepdrr.Volume.from_nrrd(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 714, in from_nrrd
+    materials = cls.segment_materials(
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 289, in segment_materials
+    materials = cls._segment_materials(hu_values, use_thresholding=use_thresholding)
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/vol/volume.py", line 253, in _segment_materials
+    return load_dicom.conv_hu_to_materials(hu_values)
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/load_dicom.py", line 149, in conv_hu_to_materials
+    materials = segmentation_network.segment(hu_values)
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/deepdrr/segmentation.py", line 56, in segment
+    padded_volume -= mean
+numpy.core._exceptions._UFuncOutputCastingError: Cannot cast ufunc 'subtract' output from dtype('float64') to dtype('int32') with casting rule 'same_kind'

@@ -1,0 +1,5 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/nifti_converter.py", line 1, in <module>
+    from dicom2nifti import convert_directory
+ImportError: cannot import name 'convert_directory' from 'dicom2nifti' (/dtu/p1/johlau/Thesis-Synthex/dicom2nifti/__init__.py)

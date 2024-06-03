@@ -1,0 +1,7 @@
+Loaded module: cuda/11.8
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 50, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/deepdrr/example_projector.py", line 16, in main
+    print(ct.anatomical_coordinate_system)
+NameError: name 'patient' is not defined

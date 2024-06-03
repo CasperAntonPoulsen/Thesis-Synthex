@@ -3,16 +3,56 @@ import pandas as pd
 import numpy as np
 #import tensorflow as tf
 import os
-import sys
+import ntpath
 import argparse
-import arguments
-
 
 os.environ["KERAS_BACKEND"] = "jax" 
+
 import keras
 from keras.layers import Dense, GlobalAveragePooling2D, Flatten
 from keras.models import Model
 from tqdm import tqdm
+
+def add_model_args(parser: argparse.ArgumentParser):
+    """Model arguments"""
+
+    group = parser.add_argument_group('model', 'model configuration')
+    group.add_argument("--model-name", type=str)
+    group.add_argument('--model-dir', type=str, help='model path')
+    group.add_argument("--data-dir", type=str)
+    group.add_argument("--epochs", type=int)
+    group.add_argument("--learning-rate", type=float)
+    group.add_argument("--batch-size", type=int)
+    group.add_argument("--radchest-samples", type=int)
+    group.add_argument("--split-idx",type=int)
+    group.add_argument("--use-synthex", action="store_true")
+    group.add_argument("--synthex-dir", type=str)
+    return parser
+
+def synthex_dir_change(path, synth_dir):
+    short_path = ntpath.basename(path)
+    name = os.path.splitext(short_path)[0]
+    image_name = '%s.png' % (name)
+    return os.path.join(synth_dir, image_name)
+
+
+def sample_angles(n, center_df, angled_df, id_column):
+    
+    if n == 0:
+        return pd.DataFrame()
+
+    return pd.concat(
+        [angled_df[angled_df[id_column] == i].sample(n=n-1, random_state=1) for i in center_df[id_column]] + [center_df]
+    )
+
+def get_n_splits(n, df):
+    length = int(len(df)/(n+1))
+
+    output_list = [df.iloc[int(length*i):int(length*(i+1))] for i in range(n-1)]
+    output_list.append(df.iloc[int(length*n-1):len(df)])
+
+    
+    return output_list
 
 # Function for creating the n-hot encoding
 def get_n_hot_encoding(df, labels_to_encode):
@@ -37,14 +77,13 @@ def change_paths(df, data_directory):
 def PD_save_models(
         x_train, 
         y_train_pd, 
-        y_train_td, 
         x_val,
         y_val_pd,
-        y_val_td,
         epochs, 
-        gamma, 
-        lr,name, 
+        lr,
+        name, 
         out_dir,
+        split_number,
         batch_size
     ):
 
@@ -66,39 +105,36 @@ def PD_save_models(
     # Pathology detection layer
     PD = Dense(5, activation='sigmoid', name="PD_output")(x)
     
-    # Tube detection layer
-    TD = Dense(4, activation='sigmoid', name="TD_output")(x)
     
-    model = Model(inputs=densenet_model.inputs, outputs=[PD, TD])
+    model = Model(inputs=densenet_model.inputs, outputs=PD)
 
     adam = keras.optimizers.Adam(learning_rate = lr)
 
-    checkpoint_filepath = out_dir + f"checkpoint.{name}_gamma_{gamma}_epochs_{epochs}.keras"
+    checkpoint_filepath = out_dir + f"checkpoint.{name}_epochs_{epochs}_split_{split_number}.keras"
     model_checkpoint_callback = keras.callbacks.ModelCheckpoint(
     filepath=checkpoint_filepath,
-    monitor='val_PD_output_auc',
+    monitor='val_auc',
     mode='max',
     save_best_only=True)
 
     model.compile(
-        loss={"PD_output": keras.losses.BinaryCrossentropy(), "TD_output": keras.losses.BinaryCrossentropy()}, 
-        loss_weights={"PD_output":gamma, "TD_output":1-gamma}, 
+        loss={"PD_output": keras.losses.BinaryCrossentropy()}, 
         optimizer=adam, 
-        metrics=[['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")],['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")]]
+        metrics=['accuracy', keras.metrics.AUC(name='auc'), keras.metrics.BinaryCrossentropy(name="loss")]
     )
+
     model.summary()
     history = model.fit(
-         x_train,
-        {"PD_output":y_train_pd, "TD_output":y_train_td},
-    #    generator_double_output(generator_train_padchest_pd, generator_train_padchest_td), 
-        batch_size=batch_size,
+        x_train,
+        y_train_pd,
+        batch_size=128,
         epochs=epochs,  
         verbose=2,
-        validation_data=(x_val, {"PD_output":y_val_pd, "TD_output":y_val_td}),
+        validation_data=(x_val, y_val_pd),
         callbacks=[model_checkpoint_callback]
     )
 
-    model.save(out_dir + f"{name}_gamma_{gamma}_epochs_{epochs}.keras")
+    model.save(out_dir + f"{name}_epochs_{epochs}_split_{split_number}.keras")
     print(history.history)
     # Get performances: train=PD, Val=TD
 
@@ -110,74 +146,91 @@ def main():
     # Defining the model hyperparameters
 
     parser = argparse.ArgumentParser()
-    parser = arguments.add_model_args(parser)
+    parser = add_model_args(parser)
 
 
     known_args, _ = parser.parse_known_args()
 
-    gamma = known_args.gamma
     name = known_args.model_name
     epochs = known_args.epochs
-    learning_rate = known_args.learning_rate
+    learning_rate = float(known_args.learning_rate)
     data_dir = known_args.data_dir
-    output_dir = known_args.model_path
-
+    output_dir = known_args.model_dir
+    n_radchest_samples = int(known_args.radchest_samples)
+    split_idx = int(known_args.split_idx)
 
     #data_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/Data/"
     #output_dir = "/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/ObjectDetection/models/"
 
+    padchest_train = pd.read_csv(data_dir + 'padchest_train.csv', index_col=0)
+    radchest_center = pd.read_csv(data_dir + "radchest_center.csv", index_col=0)
+    radchest_angled = pd.read_csv(data_dir + "radchest_angled.csv", index_col=0)
 
-    pathology_detection_train = pd.read_csv(data_dir + 'Data_splits/pathology_detection-train.csv', index_col=0)
-    tube_detection_train = pd.read_csv(data_dir + "Data_splits/tube_detection-finetuning.csv", index_col=0)
 
 
-    pathology_detection_val = pd.read_csv(data_dir + 'Data_splits/pathology_detection-val.csv', index_col=0)
-    tube_detection_val = pd.read_csv(data_dir + "Data_splits/tube_detection-finetuning_val.csv", index_col=0)
+    if known_args.use_synthex:
+        print("changing radchest paths to synthex")
+        synth_dir = "/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-Synthex/"
+        radchest_center["image_path"] = radchest_center["image_path"].apply(lambda x : synthex_dir_change(x, synth_dir))
 
-    # Concatenating the datasets for fine-tuning and shuffling
-    train_df = pd.concat([pathology_detection_train, tube_detection_train])
-    train_df = train_df.sample(frac=1, random_state=321).reset_index(drop=True)
+        synth_dir = "/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-Synthex-angled/"
+        radchest_angled["image_path"] = radchest_angled["image_path"].apply(lambda x : synthex_dir_change(x, synth_dir))
 
-    val_df = pd.concat([pathology_detection_val, tube_detection_val])
-    val_df = val_df.sample(frac=1, random_state=321).reset_index(drop=True)
 
-    # Changing the image paths, so they fit to res24
-    train_df = change_paths(train_df, data_dir)
-    val_df = change_paths(val_df, data_dir)  
+    radchest_train = sample_angles(n_radchest_samples, radchest_center, radchest_angled, "NoteAcc_DEID")
 
-    # N-hot encoding the labels
+    #train_df_all = pd.concat([padchest_train, radchest_train]).reset_index(drop=True)
     labels_to_encode = ['Effusion', 'Pneumothorax', 'Atelectasis', 'Cardiomegaly', 'Pneumonia']
-    y_train_pd = get_n_hot_encoding(train_df, labels_to_encode)
-    y_val_pd = get_n_hot_encoding(val_df, labels_to_encode)
+    train_splits = get_n_splits(5, padchest_train.sample(frac=1, random_state=1))
 
-    labels_to_encode = ['Chest_drain_tube', 'NSG_tube', 'Endotracheal_tube', 'Tracheostomy_tube']
-    y_train_td = get_n_hot_encoding(train_df, labels_to_encode)
-    y_val_td = get_n_hot_encoding(val_df, labels_to_encode)
+    splits_ = list(train_splits)
+    splits_.append(radchest_train)
+    val_df = splits_.pop(split_idx).reset_index(drop=True)
+    train_df = pd.concat(splits_).reset_index(drop=True)
 
-    #rescaler = keras.layers.Rescaling(scale=1./255)
-    # Load data into CPU memory
-    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in tqdm(train_df["ImagePath"])])/255
-    x_val = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in tqdm(val_df["ImagePath"])])/255
+    print(len(train_df))
 
+    y_train = train_df[labels_to_encode].to_numpy()
+    y_val= val_df[labels_to_encode].to_numpy()
+    print(y_train.shape)
+    print(y_val.shape)
+
+    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i, color_mode="grayscale").convert("RGB")) for i in tqdm(train_df["image_path"])])/255
+    x_val = np.array([keras.utils.img_to_array(keras.utils.load_img(i, color_mode="grayscale").convert("RGB")) for i in tqdm(val_df["image_path"])])/255
+    print(x_train.shape)
+    print(x_val.shape)
+
+
+    # images = np.array([keras.utils.img_to_array(keras.utils.load_img(i, color_mode="grayscale").convert("RGB")) for i in tqdm(train_df_all["image_path"])])/255
+    # labels = train_df_all[labels_to_encode].to_numpy()
+
+    # x_splits, y_splits = get_n_splits(5, images, labels)
+
+    # train_splits = [i for i in range(5)]
+    # _ = train_splits.pop(i)
+
+    # x_train = np.concatenate([x_splits[i] for i in train_splits], axis=0)
+    # y_train = np.concatenate([y_splits[i] for i in train_splits], axis=0)
+
+    # x_val = x_splits[i]
+    # y_val = y_splits[i]
 
     # Train model
     model_history = PD_save_models(
-        x_train, 
-        y_train_pd, 
-        y_train_td,
-        x_val,
-        y_val_pd,
-        y_val_td,
+        x_train=x_train, 
+        y_train_pd=y_train, 
+        x_val=x_val,
+        y_val_pd=y_val,
         epochs=epochs,
-        gamma=gamma,
         lr=learning_rate, 
         name=name,
         out_dir=output_dir,
-        batch_size= known_args.batch_size
+        split_number=split_idx,
+        batch_size= int(known_args.batch_size)
     )
 
     # Save metrics
-    filename = f"{name}_history_gamma_{gamma}_epochs_{epochs}.json"
+    filename = f"{name}_history_epochs_{epochs}_split_{split_idx}.json"
     df_history = pd.DataFrame(data=model_history.history)
     df_history.to_json(output_dir+filename)
 

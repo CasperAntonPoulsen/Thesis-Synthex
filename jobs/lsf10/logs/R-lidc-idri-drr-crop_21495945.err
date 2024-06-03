@@ -1,0 +1,12 @@
+Loaded module: cuda/12.2
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/layers/layer.py:360: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+0it [00:00, ?it/s]0it [00:02, ?it/s]
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_padchest.py", line 61, in <module>
+    keras.utils.save_img(file, cropped_image, scale=False)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/utils/image_utils.py", line 178, in save_img
+    img = array_to_img(x, data_format=data_format, scale=scale)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/utils/image_utils.py", line 78, in array_to_img
+    raise ValueError(
+ValueError: Expected image array to have rank 3 (single image). Got array with shape: (4,)

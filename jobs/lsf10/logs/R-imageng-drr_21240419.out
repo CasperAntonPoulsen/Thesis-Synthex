@@ -1,0 +1,101 @@
+Tue Apr  9 12:33:52 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               On  |   00000000:A1:00.0 Off |                    0 |
+| N/A   25C    P0             46W /  350W |       0MiB /  81559MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/1.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/2.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/3.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/4.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/5.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/6.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/7.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/8.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/9.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/10.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/11.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/12.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/13.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/14.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/15.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/16.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/17.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/18.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/19.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/20.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/21.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/22.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/23.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/24.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/25.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/26.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/27.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/28.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/29.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/30.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/31.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/32.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/33.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/34.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/35.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/36.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/37.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/38.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/39.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/40.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/41.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/42.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/43.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/44.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/45.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/46.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/47.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/48.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/49.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/50.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/51.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/52.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/53.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/54.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/55.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/56.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/57.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/58.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/59.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/60.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/61.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/62.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/63.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/64.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/65.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/66.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/67.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/68.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/69.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/70.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/71.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/72.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/73.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/74.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/75.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/76.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/77.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/78.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/79.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/80.png
+saved example projection image to /dtu/p1/johlau/Thesis-Synthex/data/ImagEng-DRR/81.png
