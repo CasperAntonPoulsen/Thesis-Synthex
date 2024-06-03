@@ -68,6 +68,18 @@ Finally to convert the RadChest data set you simply have to run all of the code 
 
 ### Run DeepDRR code
 
+Requirements:
+
+* Nvidia CUDA 11.8
+* pip install deepdrr
+
+in the DeepDRR repository there are dedicated files for each data set, that expects the file layout created from the CT volume conversion files.
+
+### How to control the digital C-ARM
+
+![1717409123261](image/README/1717409123261.png)
+
+In the deepdrr\deepdrr-spacial-sampling.ipynb notebook you will find the code in order to rotate to subject along the isocenter of the volume. In the function you can change the alpha and beta values. These encode for cran/caud and rao/lao respectively. To load any volume with the V-net segmentation model you will need a GPU with atleast 8gb of VRAM. If you do not posess this kind of hardware, running with thresholding will allow you to run the code at the cost of worse DRR images.
 
 ## Weekly log
 
