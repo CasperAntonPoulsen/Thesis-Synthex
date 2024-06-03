@@ -71,7 +71,12 @@ Finally to convert the RadChest data set you simply have to run all of the code 
 Requirements:
 
 * Nvidia CUDA 11.8
-* pip install deepdrr
+
+run;
+
+```
+pip install -r requirements_drr.txt
+```
 
 in the DeepDRR repository there are dedicated files for each data set, that expects the file layout created from the CT volume conversion files.
 
@@ -79,7 +84,7 @@ in the DeepDRR repository there are dedicated files for each data set, that expe
 
 ![1717409123261](image/README/1717409123261.png)
 
-In the deepdrr\deepdrr-spacial-sampling.ipynb notebook you will find the code in order to rotate to subject along the isocenter of the volume. In the function you can change the alpha and beta values. These encode for cran/caud and rao/lao respectively. To load any volume with the V-net segmentation model you will need a GPU with atleast 8gb of VRAM. If you do not posess this kind of hardware, running with thresholding will allow you to run the code at the cost of worse DRR images.
+In the deepdrr\deepdrr-spacial-sampling.ipynb notebook you will find the code in order to rotate to subject along the isocenter of the volume. In the function you can change the alpha and beta values. These encode for cran/caud and rao/lao respectively. To load any volume with the V-net segmentation model you will need a GPU with atleast 8gb of VRAM. If you do not posess this kind of hardware, running with thresholding will allow you to run the code at the cost of worse DRR images. Run the whole notebook to get all angled DRR images in accordance with the image above
 
 ## SyntheX
 
@@ -98,10 +103,9 @@ Then run the data splits code within the synthex/cyclegan.ipynb notebook
 
 The requirements for Synthex are;
 
-* Nvidia CUDA 12.3
-* Nvidia cudnn 8.9
-* Tensorflow 2.16
-* Keras 3
+```
+pip install -r requirements_synthex.txt
+```
 
 In order to run the synthex conversions follow the instructions in the pytorch-CycleGAN-and-pix2pix folder, or if you just want to recreate the same images we have, the following code block to train the model
 
@@ -170,6 +174,12 @@ First you need these requirements to run the code;
 * Nvidia CUDA 12.2
 * Keras 3.2
 * Jax[CUDA=12]
+
+Run;
+
+```
+pip install -r requirements_classification.txt
+```
 
 To run the classification you will need to run all of the code in data_prep/padchest_splits.ipynb as it generates the splits needed for the training. You also need to run the data_prep/chestx-ray8.ipynb notebook to have the last splits. Afterwards you can run everything in the previous section on SyntheX in order to get that training images from there.
 

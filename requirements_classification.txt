@@ -1,0 +1,9 @@
+nibabel
+numpy
+scipy
+python-gdcm
+pydicom >= 2.2.0
+pandas
+Keras==3.2
+jax[cuda12]
+
