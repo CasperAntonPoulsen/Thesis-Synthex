@@ -163,14 +163,9 @@ python3 pytorch-CycleGAN-and-pix2pix/test.py \
     --num_test -1
 ```
 
+## Classification
 
-## Weekly log
-
-### Weeks 8-9
-
-For these two weeks we have had focus on 3 things, finding related works for DRR and projecting CT scans to 2D for more data, Defining our experimental setup and implementing the creation of the synthetic data using DeepDRR.
-
-#### Experimental setup (Qualitative study)
+## Experimental setup (Qualitative study)
 
 When working with synthetic images a concern is the images degree of realism. Are the synthetic images easy to
 differ from real images? To check the quality of the produced synthetic images we want present a series of real and synthetic images to multiple radiologist with varying years of expertise. The dataset consist of 50 to 100 different chest
@@ -187,6 +182,8 @@ Synthetic image:
 Real image:
 
 ![1709537643196](image/README/real_example.png)
+
+## Weekly log
 
 ## Todo list
 
