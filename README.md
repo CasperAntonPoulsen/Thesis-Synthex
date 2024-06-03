@@ -16,7 +16,7 @@ This project used a lot of different data sets, most of which are publically ava
 
 ### Radchest downloader
 
-To use this data set you should apply for permission to get a token at [https://zenodo.org/records/6406114]() . Once you have this token, simply replace it either in the dedicated notebook data_prep/radchest-download.ipynb or the download script data_prep/radchest-download.py. Both scripts will download the data into the 
+To use this data set you should apply for permission to get a token at [https://zenodo.org/records/6406114]() . Once you have this token, simply replace it either in the dedicated notebook data_prep/radchest-download.ipynb or the download script data_prep/radchest-download.py. Both scripts will download the data into the
 
 ### NBIA downloader
 
@@ -36,8 +36,9 @@ The logs are stored in /carbon_logs/ and to summarize the logs, simply run;
 
 `$ python3 carbon_summary.py`
 
-
 ## DeepDRR
+
+### Data conversion
 
 The data sets required for this sections are ImagEng, LIDC-IDRI and RadChest.
 
@@ -46,6 +47,27 @@ All of these CT data sets are in different formats:
 * ImagEng is in the NRRD format
 * LIDC-IDRI contains DICOM volumes
 * RadChest is in Numpy arrays
+
+We need to convert all of these data sets to the Nifti file format for CT scans for them to be compatible with DeepDRR. To convert the ImagEng data use the conversion\convert_nrrd_to_nifti.ipynb notebook to use this file you have to run
+
+```bash
+cd conversion
+pip install -r requirements.txt
+```
+
+To convert the LIDC-IDRI data set you will need a different conversion library, specifically dicom2nifti. Firstly run;
+
+```
+cd dicom2nifti
+pip install .
+```
+
+Then you can run the code within the data_prep\lidc-idri-convertion.ipynb notebook.
+
+Finally to convert the RadChest data set you simply have to run all of the code within, presupposing you have installed the requirements from the previous steps, the data_prep\numpy_to_nifti.ipynb notebook
+
+### Run DeepDRR code
+
 
 ## Weekly log
 
