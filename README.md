@@ -85,6 +85,12 @@ In the deepdrr\deepdrr-spacial-sampling.ipynb notebook you will find the code in
 
 ### Data prep
 
+In order to run the training you will need to prepare the training data. To prepare the Padchest data run these two commands;
+
+```
+python3 data_prep/resize_padchest.py
+python3 data_prep/sample_padchest_synthex.py
+```
 
 ### Usage
 
