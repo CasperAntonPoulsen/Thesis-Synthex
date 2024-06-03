@@ -1,0 +1,10 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/train.py", line 25, in <module>
+    from util.visualizer import Visualizer
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/util/visualizer.py", line 6, in <module>
+    from . import util, html
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/util/html.py", line 1, in <module>
+    import dominate
+ModuleNotFoundError: No module named 'dominate'

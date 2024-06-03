@@ -1,0 +1,7 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 189, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 134, in main
+    output_dir = known_args.model_path
+AttributeError: 'Namespace' object has no attribute 'model_path'

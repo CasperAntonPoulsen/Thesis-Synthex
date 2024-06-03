@@ -1,0 +1,12 @@
+Loaded module: cuda/12.2
+  0%|          | 0/42733 [00:00<?, ?it/s]Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 202, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 177, in main
+    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in tqdm(train_df["image_path"])])/255
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 177, in <listcomp>
+    x_train = np.array([keras.utils.img_to_array(keras.utils.load_img(i)) for i in tqdm(train_df["image_path"])])/255
+  File "/zhome/4e/b/208805/.local/lib/python3.9/site-packages/keras/src/utils/image_utils.py", line 235, in load_img
+    with open(path, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/Thesis-Synthex/data/padchest_cropped/3-201365846432697091372848096114892696261_k7suur.png'
+  0%|          | 0/42733 [00:00<?, ?it/s]

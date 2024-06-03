@@ -1,0 +1,36 @@
+Loaded module: cuda/12.2
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/layers/layer.py:360: UserWarning: `build()` was called on layer 'patch_encoder', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_chexpert.py", line 52, in <module>
+    model = keras.saving.load_model("/dtu/p1/johlau/Thesis-Synthex/vit_object_detector_50000_samples.keras")
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_api.py", line 176, in load_model
+    return saving_lib.load_model(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 152, in load_model
+    return _load_model_from_fileobj(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 193, in _load_model_from_fileobj
+    _load_state(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 458, in _load_state
+    _load_container_state(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 533, in _load_container_state
+    _load_state(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 418, in _load_state
+    trackable.load_own_variables(weights_store.get(inner_path))
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 632, in get
+    return H5Entry(self.h5_file, path, mode="r")
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_lib.py", line 662, in __init__
+    elif path in self.h5_file and "vars" in self.h5_file[path]:
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/h5py/_hl/group.py", line 514, in __contains__
+    return h5g._path_valid(self.id, self._e(name), self._lapl)
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5g.pyx", line 531, in h5py.h5g._path_valid
+  File "h5py/_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py/_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py/h5l.pyx", line 212, in h5py.h5l.LinkProxy.exists
+  File "h5py/h5fd.pyx", line 160, in h5py.h5fd.H5FD_fileobj_read
+  File "/appl/python/3.9.10/lib/python3.9/zipfile.py", line 1087, in seek
+    read_len = min(self.MAX_SEEK_READ, read_offset)
+KeyboardInterrupt

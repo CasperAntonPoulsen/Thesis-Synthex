@@ -1,0 +1,9 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 202, in <module>
+    main()
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 174, in main
+    y_train_pd = get_n_hot_encoding(train_df, labels_to_encode)
+  File "/dtu/p1/johlau/Thesis-Synthex/classification/train_model.py", line 53, in get_n_hot_encoding
+    enc[idx][ldx] = 1
+IndexError: index 56244 is out of bounds for axis 0 with size 43861

@@ -1,0 +1,14 @@
+Loaded module: cuda/11.8
+ERROR: Unable to locate a modulefile for 'python3/3.9.18'
+WARNING: Value for scheme.platlib does not match. Please report this to <https://github.com/pypa/pip/issues/10151>
+distutils: /zhome/4e/b/208805/.local/lib/python3.9/site-packages
+sysconfig: /zhome/4e/b/208805/.local/lib64/python3.9/site-packages
+WARNING: Additional context:
+user = True
+home = None
+root = None
+prefix = None
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/lidc-idri-drr.py", line 18, in <module>
+    files = os.listdir(base_path + data_path)
+FileNotFoundError: [Errno 2] No such file or directory: '/dtu/p1/johlau/Thesis-Synthex/data/LIDC-IDRI-raw/'

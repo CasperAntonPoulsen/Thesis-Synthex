@@ -1,0 +1,79 @@
+Wed May 22 09:28:31 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               On  |   00000000:41:00.0 Off |                    0 |
+| N/A   27C    P0             49W /  350W |       0MiB /  81559MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+----------------- Options ---------------
+             aspect_ratio: 1.0                           
+               batch_size: 1                             
+          checkpoints_dir: /dtu/p1/johlau/Thesis-Synthex/synthex/data/pytorch_model	[default: ./checkpoints]
+                crop_size: 512                           	[default: 256]
+                 dataroot: /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED	[default: None]
+             dataset_mode: single                        
+                direction: AtoB                          
+          display_winsize: 256                           
+                    epoch: latest                        
+                     eval: False                         
+                  gpu_ids: 0                             
+                init_gain: 0.02                          
+                init_type: normal                        
+                 input_nc: 1                             	[default: 3]
+                  isTrain: False                         	[default: None]
+                load_iter: 0                             	[default: 0]
+                load_size: 512                           	[default: 256]
+         max_dataset_size: inf                           
+                    model: test                          
+             model_suffix:                               
+               n_layers_D: 3                             
+                     name: synthex_512                   	[default: experiment_name]
+                      ndf: 64                            
+                     netD: basic                         
+                     netG: resnet_9blocks                
+                      ngf: 64                            
+               no_dropout: True                          	[default: False]
+                  no_flip: True                          	[default: False]
+                     norm: instance                      
+                 num_test: 50                            
+              num_threads: 4                             
+                output_nc: 1                             	[default: 3]
+                    phase: test                          
+               preprocess: none                          	[default: resize_and_crop]
+              results_dir: /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-Synthex	[default: ./results/]
+           serial_batches: False                         
+                   suffix:                               
+                use_wandb: False                         
+                  verbose: False                         
+       wandb_project_name: CycleGAN-and-pix2pix          
+----------------- End -------------------
+dataset [SingleDataset] was created
+initialize network with normal
+model [TestModel] was created
+loading the model from /dtu/p1/johlau/Thesis-Synthex/synthex/data/pytorch_model/synthex_512/latest_net_G.pth
+---------- Networks initialized -------------
+[Network G] Total number of parameters : 11.366 M
+-----------------------------------------------
+processing (0000)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00067.nii.gz.png']
+processing (0005)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00180.nii.gz.png']
+processing (0010)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00335.nii.gz.png']
+processing (0015)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00393.nii.gz.png']
+processing (0020)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00518.nii.gz.png']
+processing (0025)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00625.nii.gz.png']
+processing (0030)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00783.nii.gz.png']
+processing (0035)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn00870.nii.gz.png']
+processing (0040)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn01039.nii.gz.png']
+processing (0045)-th image... ['/dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED/trn01181.nii.gz.png']

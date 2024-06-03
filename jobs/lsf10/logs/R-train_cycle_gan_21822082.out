@@ -1,0 +1,29 @@
+Tue May 21 12:46:05 2024       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 550.54.15              Driver Version: 550.54.15      CUDA Version: 12.4     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H100 PCIe               On  |   00000000:41:00.0 Off |                    0 |
+| N/A   27C    P0             49W /  350W |       0MiB /  81559MiB |      0%   E. Process |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/pywrap_tensorflow.py", line 24, in <module>
+    import ssl
+  File "/appl/python/3.9.10/lib/python3.9/ssl.py", line 98, in <module>
+    import _ssl             # if we can't import it, let the error propagate
+ImportError: libssl.so.10: cannot open shared object file: No such file or directory
+
+
+Warning: Failed to load ssl module. Continuing without ssl support.

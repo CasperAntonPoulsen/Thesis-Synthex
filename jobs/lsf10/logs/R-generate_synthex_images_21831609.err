@@ -1,0 +1,15 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/test.py", line 52, in <module>
+    model.setup(opt)               # regular setup: load and print networks; create schedulers
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 88, in setup
+    self.load_networks(load_suffix)
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/base_model.py", line 199, in load_networks
+    net.load_state_dict(state_dict)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 2153, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for ResnetGenerator:
+	size mismatch for model.1.weight: copying a param with shape torch.Size([64, 1, 7, 7]) from checkpoint, the shape in current model is torch.Size([64, 3, 7, 7]).
+	size mismatch for model.26.weight: copying a param with shape torch.Size([1, 64, 7, 7]) from checkpoint, the shape in current model is torch.Size([3, 64, 7, 7]).
+	size mismatch for model.26.bias: copying a param with shape torch.Size([1]) from checkpoint, the shape in current model is torch.Size([3]).

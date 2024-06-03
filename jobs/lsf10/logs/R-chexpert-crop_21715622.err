@@ -1,0 +1,5 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_chexpert.py", line 10, in <module>
+    import tensorflow as tf
+ModuleNotFoundError: No module named 'tensorflow'

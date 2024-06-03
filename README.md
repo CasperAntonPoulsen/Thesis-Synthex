@@ -165,6 +165,38 @@ python3 pytorch-CycleGAN-and-pix2pix/test.py \
 
 ## Classification
 
+First you need these requirements to run the code;
+
+* Nvidia CUDA 12.2
+* Keras 3.2
+* Jax[CUDA=12]
+
+To run the classification you will need to run all of the code in data_prep/padchest_splits.ipynb as it generates the splits needed for the training. You also need to run the data_prep/chestx-ray8.ipynb notebook to have the last splits. Afterwards you can run everything in the previous section on SyntheX in order to get that training images from there.
+
+To train all of the models run the following code blocks (It might be adviseable to split this into multiple steps)
+
+```
+python3 classification/train_model.py --split-idx 1 --model-name synthex-center --radchest-samples 1 --model-dir /dtu/p1/johlau/Thesis-Synthex/models/ --data-dir /dtu/p1/johlau/Thesis-Synthex/data/ --epochs 30 --learning-rate 0.00001 --batch-size 128 --use-syntex 
+python3 classification/train_model.py --split-idx 2 --model-name synthex-center --radchest-samples 1 --model-dir /dtu/p1/johlau/Thesis-Synthex/models/ --data-dir /dtu/p1/johlau/Thesis-Synthex/data/ --epochs 30 --learning-rate 0.00001 --batch-size 128 --use-syntex 
+python3 classification/train_model.py --split-idx 0 --model-name synthex-center --radchest-samples 1 --model-dir /dtu/p1/johlau/Thesis-Synthex/models/ --data-dir /dtu/p1/johlau/Thesis-Synthex/data/ --epochs 30 --learning-rate 0.00001 --batch-size 128 --use-syntex 
+python3 classification/train_model.py --split-idx 3 --model-name synthex-center --radchest-samples 1 --model-dir /dtu/p1/johlau/Thesis-Synthex/models/ --data-dir /dtu/p1/johlau/Thesis-Synthex/data/ --epochs 30 --learning-rate 0.00001 --batch-size 128 --use-syntex 
+python3 classification/train_model.py --split-idx 4 --model-name synthex-center --radchest-samples 1 --model-dir /dtu/p1/johlau/Thesis-Synthex/models/ --data-dir /dtu/p1/johlau/Thesis-Synthex/data/ --epochs 30 --learning-rate 0.00001 --batch-size 128 --use-syntex 
+
+```
+
+This is an example of how to do train a model with 5 folds cross validation with 1x sampling with synthex. If you want to see how all of the models were trained, look in the jobs/lsf10/classification/ folder for all of the jobs run
+
+To evaluate the model run these 4 scripts;
+
+```
+python3 classification/get_preds_padchest.py
+python3 classification/get_preds_chestx-ray14.py
+python3 classification/get_preds_padchest_synthex.py
+python3 classification/get_preds_chestx-ray14_synthex.py
+```
+
+To aggregate and visualize all of these results along with the AUC training plots, go to the classification/results.ipynb notebook and run all cells
+
 ## Experimental setup (Qualitative study)
 
 When working with synthetic images a concern is the images degree of realism. Are the synthetic images easy to

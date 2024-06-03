@@ -1,0 +1,10 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/train.py", line 33, in <module>
+    model = create_model(opt)      # create a model given opt.model and other options
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/__init__.py", line 65, in create_model
+    instance = model(opt)
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/cycle_gan_model.py", line 86, in __init__
+    assert(opt.input_nc == opt.output_nc)
+AssertionError

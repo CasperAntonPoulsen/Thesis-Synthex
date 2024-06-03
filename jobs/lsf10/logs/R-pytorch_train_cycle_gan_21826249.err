@@ -1,0 +1,19 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+Loaded dependency [python3/3.10.12]: sqlite3/3.42.0
+Loaded module: python3/3.10.12
+
+Loading python3/3.10.12
+  Loading requirement: sqlite3/3.42.0
+WARNING: Value for scheme.headers does not match. Please report this to <https://github.com/pypa/pip/issues/9617>
+distutils: /appl9/python/3.10.12/include/python3.10/UNKNOWN
+sysconfig: /appl9/python/3.10.12/include/python3.10
+WARNING: Additional context:
+user = False
+home = None
+root = None
+prefix = None
+  WARNING: Building wheel for visdom failed: [Errno 28] No space left on device: '/zhome/4e/b/208805/.cache/pip/wheels/42'
+ERROR: Could not install packages due to an OSError: [Errno 28] No space left on device: '/zhome/4e/b/208805/.local/lib/python3.10/site-packages/nvidia'
+
+python3: can't open file '/dtu/p1/johlau/Thesis-Synthex/train.py': [Errno 2] No such file or directory

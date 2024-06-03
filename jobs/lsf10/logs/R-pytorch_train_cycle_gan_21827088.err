@@ -1,0 +1,38 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/train.py", line 53, in <module>
+    epoch_iter += opt.batch_size
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/cycle_gan_model.py", line 183, in optimize_parameters
+    self.forward()      # compute fake images and reconstruction images.
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/cycle_gan_model.py", line 117, in forward
+    self.rec_B = self.netG_A(self.fake_A)   # G_A(G_B(B))
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/parallel/data_parallel.py", line 183, in forward
+    return self.module(*inputs[0], **module_kwargs[0])
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/models/networks.py", line 374, in forward
+    return self.model(input)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 460, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/nn/modules/conv.py", line 456, in _conv_forward
+    return F.conv2d(input, weight, bias, self.stride,
+KeyboardInterrupt

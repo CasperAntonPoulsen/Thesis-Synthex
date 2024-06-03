@@ -1,0 +1,14 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/torch/optim/lr_scheduler.py:143: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  warnings.warn("Detected call of `lr_scheduler.step()` before `optimizer.step()`. "
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/train.py", line 63, in <module>
+    img = tensor2im(sample)
+  File "/dtu/p1/johlau/Thesis-Synthex/pytorch-CycleGAN-and-pix2pix/util/util.py", line 24, in tensor2im
+    image_numpy = (np.transpose(image_numpy, (1, 2, 0)) + 1) / 2.0 * 255.0  # post-processing: tranpose and scaling
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 655, in transpose
+    return _wrapfunc(a, 'transpose', axes)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/numpy/core/fromnumeric.py", line 59, in _wrapfunc
+    return bound(*args, **kwds)
+ValueError: axes don't match array

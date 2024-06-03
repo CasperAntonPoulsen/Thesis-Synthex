@@ -1,0 +1,7 @@
+Loaded module: cuda/12.2
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/object_detection/crop_chexpert.py", line 52, in <module>
+    model = keras.saving.load_model("/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/vit_object_detector_50000_samples.keras")
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/saving/saving_api.py", line 185, in load_model
+    raise ValueError(
+ValueError: File not found: filepath=/dtu/p1/johlau/LabelReliability_and_PathologyDetection_in_ChestXrays/vit_object_detector_50000_samples.keras. Please ensure the file is an accessible `.keras` zip file.

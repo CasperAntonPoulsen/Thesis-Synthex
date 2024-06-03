@@ -1,0 +1,105 @@
+Loaded module: cuda/12.2
+2024-05-21 12:47:56.502259: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-05-21 12:47:56.556016: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2024-05-21 12:47:57.494872: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2024-05-21 12:47:59.913182: W tensorflow/core/common_runtime/gpu/gpu_device.cc:2251] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+Traceback (most recent call last):
+  File "/dtu/p1/johlau/Thesis-Synthex/synthex/cyclegan.py", line 491, in <module>
+    cycle_gan_model.fit(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/utils/traceback_utils.py", line 117, in error_handler
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/backend/tensorflow/trainer.py", line 329, in fit
+    logs = self.train_function(iterator)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 833, in __call__
+    result = self._call(*args, **kwds)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 889, in _call
+    self._initialize(args, kwds, add_initializers_to=initializers)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 696, in _initialize
+    self._concrete_variable_creation_fn = tracing_compilation.trace_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 178, in trace_function
+    concrete_function = _maybe_define_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 283, in _maybe_define_function
+    concrete_function = _create_concrete_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 310, in _create_concrete_function
+    traced_func_graph = func_graph_module.func_graph_from_py_func(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/framework/func_graph.py", line 1059, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 599, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/autograph_util.py", line 41, in autograph_handler
+    return api.converted_call(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 339, in converted_call
+    return _call_unconverted(f, args, kwargs, options)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 459, in _call_unconverted
+    return f(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 643, in wrapper
+    return func(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/backend/tensorflow/trainer.py", line 122, in one_step_on_iterator
+    outputs = self.distribute_strategy.run(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/distribute/distribute_lib.py", line 1673, in run
+    return self._extended.call_for_each_replica(fn, args=args, kwargs=kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/distribute/distribute_lib.py", line 3263, in call_for_each_replica
+    return self._call_for_each_replica(fn, args, kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/distribute/distribute_lib.py", line 4061, in _call_for_each_replica
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 833, in __call__
+    result = self._call(*args, **kwds)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 906, in _call
+    return tracing_compilation.call_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 132, in call_function
+    function = trace_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 178, in trace_function
+    concrete_function = _maybe_define_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 283, in _maybe_define_function
+    concrete_function = _create_concrete_function(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/tracing_compilation.py", line 310, in _create_concrete_function
+    traced_func_graph = func_graph_module.func_graph_from_py_func(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/framework/func_graph.py", line 1059, in func_graph_from_py_func
+    func_outputs = python_func(*func_args, **func_kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/polymorphic_function.py", line 599, in wrapped_fn
+    out = weak_wrapped_fn().__wrapped__(*args, **kwds)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/polymorphic_function/autograph_util.py", line 41, in autograph_handler
+    return api.converted_call(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 331, in converted_call
+    return _call_unconverted(f, args, kwargs, options, False)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 459, in _call_unconverted
+    return f(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/autograph/impl/api.py", line 643, in wrapper
+    return func(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/keras/src/backend/tensorflow/trainer.py", line 110, in one_step_on_data
+    return self.train_step(data)
+  File "/dtu/p1/johlau/Thesis-Synthex/synthex/cyclegan.py", line 395, in train_step
+    grads_F = tape.gradient(total_loss_F, self.gen_F.trainable_variables)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/backprop.py", line 1066, in gradient
+    flat_grad = imperative_grad.imperative_grad(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/imperative_grad.py", line 67, in imperative_grad
+    return pywrap_tfe.TFE_Py_TapeGradient(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/eager/backprop.py", line 148, in _gradient_function
+    return grad_fn(mock_op, *out_grads)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/ops/math_grad.py", line 279, in _MeanGrad
+    axes = (op.inputs[1] + input_rank) % input_rank
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/framework/override_binary_operator.py", line 113, in binary_op_wrapper
+    return func(x, y, name=name)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/ops/tensor_math_operator_overrides.py", line 28, in _add_dispatch_factory
+    return math_ops._add_dispatch(x, y, name=name)  # pylint: disable=protected-access
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/util/traceback_utils.py", line 150, in error_handler
+    return fn(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/util/dispatch.py", line 1260, in op_dispatch_handler
+    return dispatch_target(*args, **kwargs)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/ops/math_ops.py", line 1695, in _add_dispatch
+    return gen_math_ops.add_v2(x, y, name=name)
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/ops/gen_math_ops.py", line 490, in add_v2
+    _, _, _op, _outputs = _op_def_library._apply_op_helper(
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 778, in _apply_op_helper
+    _ExtractInputsAndAttrs(op_type_name, op_def, allowed_list_attr_map,
+  File "/dtu/p1/johlau/Thesis-Synthex/.venv/lib/python3.9/site-packages/tensorflow/python/framework/op_def_library.py", line 555, in _ExtractInputsAndAttrs
+    as_ref=input_arg.is_ref,
+KeyboardInterrupt

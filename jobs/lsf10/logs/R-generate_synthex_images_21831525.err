@@ -1,0 +1,12 @@
+Loaded module: cuda/12.3.2
+Loaded module: cudnn/v8.9.7.29-prod-cuda-12.X
+/dtu/p1/johlau/Thesis-Synthex/.venv/bin/python3: can't open file '/dtu/p1/johlau/Thesis-Synthex/test.py': [Errno 2] No such file or directory
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 38: --dataroot: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 39: --name: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 40: --model: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 41: --load_size: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 42: --crop_size: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 43: --preprocess: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 44: --results_dir: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 45: --checkpoints_dir: command not found
+/zhome/4e/b/208805/.lsbatch/1716359649.21831525.shell: line 46: --dataset_mode: command not found
