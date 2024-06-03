@@ -81,6 +81,81 @@ in the DeepDRR repository there are dedicated files for each data set, that expe
 
 In the deepdrr\deepdrr-spacial-sampling.ipynb notebook you will find the code in order to rotate to subject along the isocenter of the volume. In the function you can change the alpha and beta values. These encode for cran/caud and rao/lao respectively. To load any volume with the V-net segmentation model you will need a GPU with atleast 8gb of VRAM. If you do not posess this kind of hardware, running with thresholding will allow you to run the code at the cost of worse DRR images.
 
+## SyntheX
+
+### Data prep
+
+
+### Usage
+
+The requirements for Synthex are;
+
+* Nvidia CUDA 12.3
+* Nvidia cudnn 8.9
+* Tensorflow 2.16
+* Keras 3
+
+In order to run the synthex conversions follow the instructions in the pytorch-CycleGAN-and-pix2pix folder, or if you just want to recreate the same images we have, the following code block to train the model
+
+```
+python3 pytorch-CycleGAN-and-pix2pix/train.py \
+     --dataroot /dtu/p1/johlau/Thesis-Synthex/synthex/data \
+     --input_nc 1 \
+     --output_nc 1 \
+     --max_dataset_size 1024 \
+     --checkpoints_dir /dtu/p1/johlau/Thesis-Synthex/synthex/data/pytorch_model \
+     --name synthex_512 \
+     --load_size 552 \
+     --crop_size 512
+```
+
+In order to generate the images run these two code blocks to generate the center and angled images respectively
+
+```
+python3 pytorch-CycleGAN-and-pix2pix/test.py \
+    --dataroot /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-CROPPED \
+    --name synthex_512 \
+    --model test \
+    --load_size 512 \
+    --crop_size 512 \
+    --preprocess none \
+    --results_dir /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-Synthex \
+    --checkpoints_dir /dtu/p1/johlau/Thesis-Synthex/synthex/data/pytorch_model \
+    --dataset_mode single \
+    --netG resnet_9blocks \
+    --netD basic \
+    --no_dropout \
+    --norm instance \
+    --no_flip \
+    --direction AtoB \
+    --input_nc 1 \
+    --output_nc 1 \
+    --num_test -1
+```
+
+```
+python3 pytorch-CycleGAN-and-pix2pix/test.py \
+    --dataroot /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-DRR-angled-CROPPED \
+    --name synthex_512 \
+    --model test \
+    --load_size 512 \
+    --crop_size 512 \
+    --preprocess none \
+    --results_dir /dtu/p1/johlau/Thesis-Synthex/data/RAD-ChestCT-Synthex-angled \
+    --checkpoints_dir /dtu/p1/johlau/Thesis-Synthex/synthex/data/pytorch_model \
+    --dataset_mode single \
+    --netG resnet_9blocks \
+    --netD basic \
+    --no_dropout \
+    --norm instance \
+    --no_flip \
+    --direction AtoB \
+    --input_nc 1 \
+    --output_nc 1 \
+    --num_test -1
+```
+
+
 ## Weekly log
 
 ### Weeks 8-9
