@@ -1,5 +1,7 @@
 # (GENSYN) Generating Synthetic x-ray Images using SyntheX
 
+link to thesis: [https://drive.google.com/file/d/19cnKnDzY5-BwGHDWXkpvu1OCJJ-6qUxz/view?usp=sharing](Masters Thesis Gensyn)
+
 This is the repository for Casper Anton Poulsen and Michelle Hestbek-Møller Masters Thesis done at The IT University of Copenhagen in Spring of 2024. This repo is split into 5 different sections
 
 * Data - Here is all the information on how to use custom download scripts
